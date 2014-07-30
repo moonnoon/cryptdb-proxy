@@ -66,7 +66,7 @@ Convention : When this document uses syntax like
                          --max-open-files=1024                         \
                          --proxy-lua-script=$EDBDIR/mysqlproxy/wrapper.lua \
                          --proxy-address=127.0.0.1:3307                \
-                         --proxy-backend-addresses=localhost:3306
+                         --proxy-backend-addresses=127.0.0.1:3306
 
         B) Connect to CryptDB: (where root/letmein are username/password)
            mysql -u root -pletmein -h 127.0.0.1 -P 3307

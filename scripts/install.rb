@@ -32,10 +32,11 @@ def get_pkgs
 
     pkg_shell = ShellDoer.new("~")
     pkg_shell.>(%q{
-        sudo apt-get install gawk liblua5.1-0-dev libntl-dev         \
+        apt-get install gawk liblua5.1-0-dev libntl-dev         \
                 libmysqlclient-dev libssl-dev libbsd-dev        \
                 libevent-dev libglib2.0-dev libgmp-dev          \
-                mysql-server libaio-dev automake                \
+				#mysql-server
+                libaio-dev automake                \
                 gtk-doc-tools flex cmake libncurses5-dev        \
                 bison g++ make
     })
@@ -145,9 +146,10 @@ def fn(cdb_path, in_make_v=nil, in_gcc_v=nil)
     end
     cryptdb_shell.>("make clean")
     cryptdb_shell.>("make")
-    cryptdb_shell.>("service mysql stop", true)
+    #cryptdb_shell.>("service mysql stop", true)
+	#attention edb.so
     cryptdb_shell.>("make install")
-    cryptdb_shell.>("service mysql start")
+    #cryptdb_shell.>("service mysql start")
 
     shadow_path = File.join(cryptdb_path, SHADOW_NAME)
     cryptdb_shell.>("rm -rf #{shadow_path}")

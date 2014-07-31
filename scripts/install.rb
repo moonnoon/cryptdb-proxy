@@ -35,7 +35,7 @@ def get_pkgs
         apt-get install gawk liblua5.1-0-dev libntl-dev         \
                 libmysqlclient-dev libssl-dev libbsd-dev        \
                 libevent-dev libglib2.0-dev libgmp-dev          \
-                libaio-dev automake #mysql-server               \
+                libaio-dev automake \
                 gtk-doc-tools flex cmake libncurses5-dev        \
                 bison g++ make
     })

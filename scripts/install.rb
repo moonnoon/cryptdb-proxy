@@ -160,6 +160,7 @@ def fn(cdb_path, in_make_v=nil, in_gcc_v=nil)
     #cryptdb_shell.>("chown -R #{Etc.getlogin} #{cryptdb_path}")
 	unless "#{Etc.getlogin}".empty?
 		cryptdb_shell.>("chown -R #{Etc.getlogin} #{cryptdb_path}")
+	end
 
     # remind the user about EDBDIR
     p_puts "You must do: export EDBDIR=/full/path/to/cryptdb/ before running cryptdb; we recommend putting it into your .bashrc"
